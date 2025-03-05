@@ -1,5 +1,4 @@
 import numpy as np
-from sklearn.datasets import make_blobs 
 from matplotlib import pyplot as plt
 from tqdm import tqdm
 
@@ -105,8 +104,11 @@ def two_layers_neural_network(X, y, learning_rate = 0.01, n_iterations = 1000):
     return parameters
 
 
-X, y = make_blobs(n_features=2, n_samples=100, centers=2, random_state=0)
-X = X.T # (2, 100)
-y = y.reshape(1, -1) # (1, 100)
+X = np.array([[0, 0, 1, 1],
+              [0, 1, 0, 1]]) 
+
+y = np.array([[0, 1, 1, 0]])
 
 parameters = two_layers_neural_network(X, y, learning_rate=0.1, n_iterations=10000)
+activations = forward_propagation(parameters, X)
+print(activations['A2'])
