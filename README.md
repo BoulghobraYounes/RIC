@@ -1,2 +1,2 @@
 # RIC
-This repository is destinated for RIC practical assignments
+This repository is destined for RIC practical assignments
